@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="Generator" content="EditPlus®">
+  <meta name="Author" content="">
+  <meta name="Keywords" content="">
+  <meta name="Description" content="">
+  <title>Document</title>
+   <link rel="shortcur icon" href="icons/AnyConv.com__f.ico">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script>
+		$(document).ready(function(){
+			$(window).mousemove(function(e){
+				x = e.pageX*-1;
+				$("#sns_img").css({"left":x})
+			})
+			//던킨도넛 next슬라이드 애니메이션//
+            slide_num = 0 ;
+				$("#next_bt").click(function(){
+				slide_num = slide_num -100
+				if(slide_num <= -500){slide_num=-400}
+				$("#slide_box2").animate({"left":slide_num+"%"},300)
+				$("#slide_bt li").eq(slide_num/-100).css({"background-color":"#fff","margin-right":"5px","transform":"scale(2)"}).siblings().css({"background-color":"#bbb","transform":"scale(1)"})
+				})
+			//던킨도넛 next슬라이드 애니메이션//
+			//던킨도넛 prev슬라이드 애니메이션//
+            
+				 $("#prev_bt").click(function(){
+		slide_num = slide_num + 100 // 0 -100 -200 -300 -400 -500 -600 -700 -800 /// -900
+		if(slide_num >= 0){slide_num = 0}
+		$("#slide_box2").animate({"left":slide_num+"%"},300)
+       $("#slide_bt li").eq(slide_num/-100).css({"background-color":"#fff","margin-right":"5px","transform":"scale(2)"}).siblings().css({"background-color":"#bbb","transform":"scale(1)"})
+     })
+
+			//던킨도넛 prev슬라이드 애니메이션//
+			//#popup2 h6을 클릭하면 #popup2가 꺼져라
+			$('#popup2 h6').click(function(){
+				$('#popup2').css({'display':'none'})
+			})
+        $("#slide_bt li:nth-child(1)").click(function(){
+			$(this).css({"transform":"scale(2)","background-color":"#fff","margin-right":"5px"}).siblings().css({"background-color":"#bbb","transform":"scale(1)"})
+			$("#slide_box2").animate({left:0},300)
+        })
+		$("#slide_bt li:nth-child(2)").click(function(){
+			$(this).css({"transform":"scale(2)","background-color":"#fff","margin-right":"5px"}).siblings().css({"background-color":"#bbb","transform":"scale(1)"})
+			$("#slide_box2").animate({left:0-100+"%"},300)
+        })
+		$("#slide_bt li:nth-child(3)").click(function(){
+			$(this).css({"transform":"scale(2)","background-color":"#fff","margin-right":"5px"}).siblings().css({"background-color":"#bbb","transform":"scale(1)"})
+			$("#slide_box2").animate({left:0-200+"%"},300)
+        })
+		$("#slide_bt li:nth-child(4)").click(function(){
+			$(this).css({"transform":"scale(2)","background-color":"#fff","margin-right":"5px"}).siblings().css({"background-color":"#bbb","transform":"scale(1)"})
+			$("#slide_box2").animate({left:0-300+"%"},300)
+        })
+		$("#slide_bt li:nth-child(5)").click(function(){
+			$(this).css({"transform":"scale(2)","background-color":"#fff","margin-right":"5px"}).siblings().css({"background-color":"#bbb","transform":"scale(1)"})
+			$("#slide_box2").animate({left:0-400+"%"},300)
+        })
+
+		$("#popup_banner_bt").click(function(){
+		  $("#popup_banner_box1").slideToggle()	
+		})
+		//던킨도넛 이벤트 슬라이드//
+
+      $("#new_list_bt li:nth-child(1)").click(function(){
+		$("#new_event_list").animate({"left":"0"})
+		$(this).css({"transform":"scale(1.3)","background-color":"#000"}).siblings().css({"transform":"scale(1)","background-color":"gray"})
+      })
+
+	   $("#new_list_bt li:nth-child(2)").click(function(){
+		$("#new_event_list").animate({"left":"-1107px"})
+		$(this).css({"transform":"scale(1.3)","background-color":"#000"}).siblings().css({"transform":"scale(1)","background-color":"gray"})
+      })
+
+
+		//던킨도넛 이벤트 슬라이드//
+       })
+	</script>
+  <style>
+	*{margin: 0;padding: 0;list-style: none;}
+	body,html{height: 100%;}
+	header{width:100%;position: fixed;z-index: 999;top: 0;left: 0;background-color: #fff;}
+	#header1{width: 100%;height: 115px;background-color: #f8faf0;border-bottom: 1px solid #e5e2e0;position: relative}
+	#header1_box{width: 1200px;height: 115px;margin: auto;overflow: hidden;}
+    #header1_menu1{width: 400px;height: 100px;float: left;margin-top: 8px;}	
+	#header1_menu1 li{font-size: 11px;display: inline-block;line-height: 100px;margin-right: 18px;color: #5a5a5a;}
+	#header1_menu2 li:nth-child(1) {color: #ff9933;font-weight: 900;}
+	#header1_menu2{width: 250px;height: 100px;float: right;margin-top: 8px;}
+	#header1_menu2 li{float: left;display: inline-block;font-size: 11px;color: #5a5a5a;line-height: 100px;margin-right: 25px;}
+	#header1_menu2 img{margin-top: 27px;}
+	#header2{width: 100%;height: 54px;}
+	#header2_box{width: 1200px;height: 54px;margin: auto;}
+	#logo{width: 111px;height: 40px;margin: auto;margin-top: 38px;}
+	#popup_banner{width: 100%;position: fixed;z-index: 9999;left: 0;top: 0;border-top: 4px solid #2c1810}
+    #popup_banner_box1 {width: 100%;height: 210px;background-color:#2c1810;display: none;}
+	#popup_banner_box1 img {margin-left: 750px;}
+	#popup_banner_box1 img:hover {cursor: pointer;}
+	#popup_banner_box2{width: 1200px;height: 20px;margin: auto;text-align: center;} 
+	#popup_banner_bt{border: none;width: 150px;height: 20px;background-color: #2c1810;color: #d2952d;text-align: center;outline: none;float: right;-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 0 0 5px 5px;font-size: 11px;}
+	#popup_banner_bt img {float: left;margin-left: 11px;margin-top: -3px;}
+	#popup_banner_bt p {margin-top: -5px;}
+	#popup_banner_bt:hover {cursor: pointer;	}
+
+	
+	#header2_menu1{width: 150px;height: 49px;float: left;margin-top: 2px;line-height: 49px;}
+	#header2_menu1 li{display: inline-block;font-size: 11px;color: #666666;font-weight: 900;margin-right: 25px;}
+	#header2_menu2{height: 50px;float: right;margin-top: 2px;line-height: 48px;}
+	#header2_menu2 li{font-size: 13.5px;font-weight: 900;float: left;margin-left: 105px;}
+	#header2_menu2 li:hover{cursor: pointer;color: #ffcc66;}
+	#popup_bt img{float: left;margin-left: 13px;margin-top: 5px;}
+	#slide{width: 100%;height: 659px;margin-top: 176px;position: relative;overflow: hidden;margin-top: 171px;}
+	#slide_box{width: 1200px;height: 659px;margin: auto;position: relative;	}
+	#slide_box2{width: 500%;height: 629px;position: absolute;left: 0;right: 0;margin: auto;}
+	#slide_box2 li {float: left;width: 20%;height: 629px}
+	#slide_box2 li:nth-child(1){background: #fff url(images/1612312975.jpg) center 0 no-repeat;background-size: cover;}
+	#slide_box2 li:nth-child(2){background: #fff url(images/1612312996.jpg) center 0 no-repeat;background-size: cover;}
+	#slide_box2 li:nth-child(3){background: #fff url(images/1575611684.png) center 0 no-repeat;background-size: cover;}
+	#slide_box2 li:nth-child(4){background: #fff url(images/1580951826.png) center 0 no-repeat;background-size: cover;}
+	#slide_box2 li:nth-child(5){background: #fff url(images/1644566499.jpg) center 0 no-repeat;background-size: cover;}
+	#prev_bt{position: absolute;top: 0;bottom: 0;left:-100px;margin: auto;}
+	#next_bt{position: absolute;top: 0;bottom: 0;right:-100px;margin: auto}
+	#slide_bt{width: 100%;height: 20px;position: absolute;left: 0;bottom: 40px;text-align: center;}
+	
+	#slide_bt li{width: 5px;height: 5px;display: inline-block;-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;background-color: #bbb;margin-bottom: 20px;}
+	#slide_bt li:nth-child(1){transform:scale(2);background-color: #fff;margin-right: 5px;}
+	#prev_bt,#next_bt{cursor: pointer;}
+	#new_event{width: 1100px;height: 240px;margin: auto;margin-top: 80px;position: relative;}
+	#new_event1{width: 25%;height: 240px;float: left;}
+    #new_event1 button{position: absolute;bottom: 0;left: 0;width: 150px;height: 50px;-webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    border-radius: 5px;background-color: transparent;border: 1px solid #cc9966;color: #c96;}
+	 #new_event1 button:hover{cursor: pointer;}
+	#new_event2{width: 25%;height: 240px;float: left;}
+	#line{width: 25px;border-bottom: 1px solid #cc9966;}
+	#new_event2 h4 {margin-top: 25px;font-weight: 400;font-size: 16px;}
+	#new_event2 h6 {margin-top: 15px;color: #8a8a8a;}
+    #new_event3{width: 50%;height: 240px;float: left;}
+    #new_event3 iframe {-webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;float: right;}
+	#new_event_list{width: 2210px;height: 446px;margin: auto;position: relative;left: 0;top: 0;}
+	#enent_list_wrap {width: 1100px;height: 448px;margin: auto;margin-top: 30px;overflow: hidden;}
+	#new_event_list>li {border: 1px solid #cc9900;width: 265px;height: 446px;margin-right:10px;float: left;border-radius:10px;overflow: hidden;}
+	#new_event_list>li:last-child { margin-right: 0; }
+	.text1{width: 266px;height: 85px; border-bottom: 1px solid #cc9900;}
+	#txtovf{width: 200px;white-space: nowrap;overflow: hidden;-ms-text-overflow: ellipsis;
+	text-overflow: ellipsis;}
+	#txtovf2{width: 220px;white-space: nowrap;overflow: hidden;-ms-text-overflow: ellipsis;
+	text-overflow: ellipsis;}
+    .text1 h4{width: 266px;float: left;font-size: 23px;font-weight: 600;margin-top: 10px;margin-left: 10px;}	
+    .text1 h5{float: left;font: 18px;font-weight: 400;margin-top: 12px;margin-left: 13px;color: #996600;}
+    .text1 img{float: right;margin-right: 17px;margin-bottom: 20px;}
+    .text2{width: 266px;height: 85px;text-align: center; }
+    .text2 p{font-size: 17px;color: #996600;margin-left: 10px;margin-top: 20px;margin-right: 10px;}
+    .list_img img {vertical-align: top;}
+	#new_list_br{width: 1100px;height: 15px;border: 1px solid #000;margin: auto;margin-top: 20px;border: 1px solid #000;}
+	.list_img2 {position: absolute;left: 0;right: 0;height: 266px;}
+	.list_img2>li {height: 266px;float: left;width: 266px;}
+	
+	#new_list_bt{width: 60px;height: 20px;margin: auto;margin-top: 40px;}
+	#new_list_bt li{width: 10px;height: 10px;-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;background-color: gray;float: left;margin-right: 5px;}
+	#new_list_bt li:nth-child(1){transform:scale(1.3);background-color: black	}
+	#new_list_bt li:hover {cursor: pointer;}
+
+
+
+	#bg1{width: 100%;height: 400px;background: #fff url(images/img_banner_1_1.jpg) center 0 no-repeat fixed;background-size:cover;margin-top: 70px;overflow: hidden; text-align: center; position: relative; }
+	#bg1_img1{ position: absolute; left: -150px; right: 0; top: -100px; bottom: 0; margin: auto;  }
+	#bg1_img2{ position: absolute; left: 0; right: 0; top: 0; bottom: -100px; margin: auto; }
+	#menu_list{width: 1200px;height: 600px;margin: auto;margin-top: 80px;text-align: center;}
+    #menu_list h4 {margin-top: 40px;font-size: 17px;font-weight: 400;}
+    #menu_list p{margin-top: 18px;font-size: 10px;font-weight: 900;color: #666;}
+	#menu_list ul li{width: 220px;margin: 10px;float: left;margin-top: 35px;height: 300px;}
+	#menu_list ul li img{}
+	#menu_list ul li h5 {margin-top: 10px;font-size: 22px;font-weight: 400;}
+	#menu_list ul li button{width: 125px;height: 35px;font-size: 12px;margin-top: 18px;-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;background-color: transparent;border: 1px solid #996600;color: #960;}
+	#menu_list ul li button:hover{cursor: pointer;}
+
+	#bg2{width: 100%;height: 400px;background: #fff url(images/img_banner_1_2.jpg) center 0 no-repeat fixed;-webkit-background-size: cover;
+	background-size: cover;margin-top: 50px;position: relative;}
+	#bg2_leftbox{position: absolute;top: -120px;bottom: 0;right: 0;left:-400px;margin: auto;width: 380px;height: 380px;-webkit-border-radius: 380px;
+	-moz-border-radius: 200px;
+	border-radius: 200px;background-color: red;background: #fff url(images/bg_map.png) 0 0 no-repeat;	}
+	#bg2_leftbox h4 {color: #fff;margin-top: 170px;font-size: 16px;margin-left: 100px;}
+	#bg2_leftbox p{color: #fff;font-size: 15px;margin-top: 16px;margin-left: 100px;}
+	#bg2_leftbox p span {color: #c60;}
+	#bg2_rightbox{position: absolute;top: 0;bottom:-120px;right: -400px;left: 0;margin: auto;width: 380px;height: 380px;-webkit-border-radius: 380px;
+	-moz-border-radius: 200px;
+	border-radius: 200px;background-color: blue;background: #fff url(images/bg_catering.png) 0 0 no-repeat;}
+	#bg2_rightbox h4{color: #663300;margin-top: 170px;margin-left: 155px;font-size: 16px;	}
+	#bg2_rightbox p{color: #663300;margin-left: 155px;margin-top: 16px;font-size: 15px;}
+
+
+	#sns{width: 100%;margin-top: 100px;}
+	#sns_box{width: 269px;height: 130px;margin: auto;text-align: center;}
+	#sns_box h4{margin-top: 20px;font-size: 16px;font-weight: 400;}
+    #sns img{margin: auto;}
+    #sns_box2{width: 350px;height: 60px;margin: auto;margin-top: 30px;}
+	#sns_icon li{width: 60px;height: 60px;display: inline-block;margin: 5px;-webkit-border-radius: 60px;
+	-moz-border-radius: 60px;
+	border-radius: 60px;border: 1px solid #663300;margin: auto;text-align: center;line-height: 60px;}
+	#sns_icon li img{width: 20px;vertical-align: middle;}
+
+	#sns_img{width: 3900px;overflow: hidden;margin-top: 50px;position: absolute;left: 0;top: 0;}
+	#sns_img li{width: 260px;height: 260px;float: left;}
+	#sns_img li img{width: 100%;}
+	#sns_img_slidebox{width: 100%;overflow: hidden;position: relative;height: 260px;}
+     
+	 footer{width: 1200px;height: 400px;margin: auto;margin-top: 60px;}
+	 #footer_leftbox{width: 350px;height: 280px;float: left;}
+     #footer_leftbox ul{margin-top: 8px;}
+     #footer_leftbox li{font-size: 11px;margin-top: 8px;color: #8b8b8b;float: left;}
+      #footer_leftbox li:nth-child(3){float: right;}
+	  #footer_leftbox li:nth-child(5){float: right;margin-right: 15px;}
+	  #footer_logo2{margin-top: 50px;}
+	  #family{width: 150px;height: 30px;border: 1px solid #5f5f5f;margin-top: 5px;-webkit-border-radius: 5px;
+	  -moz-border-radius: 5px;
+	  border-radius: 5px;font-size: 11px;padding-left: 8px;	}
+
+	 #footer_rightbox{width: 750px;height: 300px;float: right;border-top: 3px solid #000;}
+	 #footer_rightbox_left{width: 570px;height: 200px;}
+      #footer_rightbox_left_box1{margin-top: 15px;font-size: 13px;font-weight: 900;}
+      #footer_rightbox_left_box1 li{float: left;margin-right: 100px;}
+	  .footer_rightbox_left_box{float: left;width: 110px;height: 80px;margin-right: 30px;font-size: 12px;margin-top: 20px;}
+	  #footer_rightbox_right{width: 130px;font-size: 13px;height: 200px;float: right;margin-top: -200px;}	
+	  #footer_rightbox_right li{text-align: right;margin-top: 14px;font-size: 14px;color: #5f5f5f;}	
+	  #footer_rightbox_right li:nth-child(4){font-size: 15px;font-weight: 900;color: #5f5f5f;}
+      #footer_icons{width: 185px;height: 30px;float: right;margin-top: -20px;}
+	   #footer_icons li{width: 30px;height: 30px;margin-left: 5px;-webkit-border-radius: 30px;
+	   -moz-border-radius: 30px;
+	   border-radius: 30px;border: 1px solid #000;float: left;text-align: center;}
+	   #footer_icons li img {width: 15px;list-style: 30px;vertical-align: middle;}
+	   #footer_rightbox2{width: 750px;border-top: 3px solid #000;margin-top: 30px;}
+	   #fr_box2 {margin-top: 15px;}
+	   #fr_box2 li {float: left;margin-right: 20px;font-size: 11px;color: #5f5f5f;}
+	   #fr_box2 li:nth-child(3){font-weight: 900;color: #f69;}
+
+	   #popup2 {width: 400px;height: 824px;position: absolute;left: 0;top: 0;border: 1px solid #000;z-index: 999;}
+	   #popup2_img {vertical-align: top;}
+	   #popup2 input {vertical-align: middle;position: absolute;left: 10px;bottom:7px;}
+       #popup2 h6 {position: absolute;width: 20px;height: 20px;right: 2px;bottom: 2px;cursor: pointer;}
+
+
+
+	 
+	
+	
+
+	
+
+
+	
+
+
+
+
+
+  </style>
+ </head>
+ <body>
+  <header>
+  	<div id="header1">
+  		<div id="header1_box">
+			<ul id="header1_menu1">
+			<li>FACEBOOK</li>
+			<li>BLOG</li>
+			<li>INSTAGRAM</li>
+			<li>TWITTER</li>
+			<li>YOUTUBE</li></ul>
+			<ul id="header1_menu2">
+			<li>창업문의</li>
+			<li>고객센터</li>
+			<li>SEARCH</li>
+			<img src="icons/icon_search.png" alt=""></ul>
+			<h1 id="logo"><img src="icons/logo_dunkindonuts.png" alt=""></h1>
+           
+  	</div>
+  	<div id="header2">
+  		<div id="header2_box">
+		<ul id="header2_menu1">
+		<li>LOGIN</li>
+		<li>JOIN</li></ul>
+  		<ul id="header2_menu2">
+		<li>ONLINE STORE</li>
+		<li>MENU</li>
+		<li>영양정보 및 알레르기</li>
+		<li>EVENT</li>
+		<li>STORE</li>
+		<li>BRAND</li>	
+		</ul></div>
+  	</div>
+	
+  </header>
+  <div id="slide">
+	<ul id="slide_box2">
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+		<li></li>
+	
+	</ul>
+  	<div id="slide_box">
+	
+	
+		<img src="icons/btn_prev.png" alt="" id="prev_bt">
+		<img src="icons/btn_next.png" alt="" id="next_bt">
+	
+	
+  </div>
+  <ul id="slide_bt">
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li></ul>
+  </div>
+ <div id="new_event">
+	<div id="new_event1"><img src="images/tit_new_event (1).png" alt=""><button>전체 이벤트 보기</button></div>
+	<div id="new_event2">
+	<div id="line"></div>
+	<h4>던킨도너츠의 다양한 혜택과<br>
+이벤트 그리고 신제품</h4>
+	<h6>sweet break, dunkin’ donuts</h6></div>
+	<div id="new_event3">
+		<iframe width="80%" height="240" src="https://www.youtube.com/embed/zqULLpgAd2Y" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+		</iframe>
+		<div id="new"><img src="icons/" alt=""></div>
+		
+	</div>
+
+ </div>
+
+ <div id="enent_list_wrap">
+ 	<ul id="new_event_list">
+ 	<li>
+ 	<div class="list_img">
+ 	<img src="images/1635929459.jpg" alt="">
+ 	</div>
+ 	<div class="text1">
+ 	<h4>어몽어스 보틀 </h4>
+ 	<h5>2021-03-12~</h5>
+ 	<img src="icons/icon_store.gif" alt=""></div>
+ 	<div class="text2">
+ 	<p>1만원이상 구매시 어몽어스 보틀 3900원</p>
+ 	</div>
+ 	</li>
+ 	
+ 	<li><div class="list_img">
+ 		<img src="images/1635929486.jpg" alt="">
+ 	</div>
+ 	<div class="text1">
+ 	<h4 id="txtovf">KT멤버십 신학기 프로모션</h4>
+ 	<h5>2021-03-12</h5>
+ 	<img src="icons/icon_store.gif" alt=""></div>
+ 	<div class="text2"><p>kt어몽어스세트5,000원 OFF</p></div></li>
+ 	<li><div class="list_img">
+ 		<img src="images/1638529090.jpg" alt="">
+ 	</div>
+ 	<div class="text1">
+ 	<h4>허니버터 기프트팩</h4>
+ 	<h5>2021-03-15~2021-03-18</h5>
+ 	<img src="icons/icon_store.gif" alt=""></div>
+ 	<div class="text2"><p>허니버터 기프트팩 7,300원!</p></div></li>
+ 	
+ 	<li><div class="list_img">
+ 		<img src="images/1635929680.jpg" alt="">
+ 	</div>
+ 	<div class="text1">
+ 	<h4 id="txtovf2">
+ 	도넛프라이데이 해피마켓	
+ 	</h4>
+ 	<h5>2021-03-01~2021-06-15</h5>
+ 	<img src="icons/icon_store.gif" alt=""></div>
+ 	<div class="text2"><p>해피마켓 도넛프라이데이 온라인 오픈!</p></div></li>
+ 	
+ 	<li><div class="list_img">
+ 		<img src="images/1620351640.jpg" alt="">
+ 	</div>
+ 	<div class="text1">
+ 	<h4 id="txtovf2">해피마켓 햅모닝</h4>
+ 	<h5>2021-07-05~</h5>
+ 	<img src="icons/icon_store.gif" alt=""></div>
+ 	<div class="text2"><p>해피마켓 햅모닝 온라인 프로모션</p></div></li>
+ 	<li><div class="list_img">
+ 	
+ 		<img src="images/1630993357.jpg" alt="">
+ 	</div>
+ 	<div class="text1">
+ 	<h4 id="txtovf2">던킨 X 11번가</h4>
+ 	<h5>2021-07-11 ~ 2021-07-14</h5>
+ 	<img src="icons/icon_store.gif" alt=""></div>
+ 	<div class="text2"><p>던킨 X 11번가 복날 프로모션</p></div></li>
+ 	
+ 	<li><div class="list_img">
+ 		<img src="images/1628328661.jpg" alt="">
+ 	</div>
+ 	<div class="text1">
+ 	<h4 id="txtovf2">이달의 음료 1+1</h4>
+ 	<h5>2021-07-09 ~ 2021-07-15</h5>
+ 	<img src="icons/icon_store.gif" alt=""></div>
+ 	<div class="text2"><p>올 여름 클났다! 쿨라타 1+1</p></div></li>
+ 	
+ 	<li><div class="list_img">
+ 		<img src="images/1631009116(2).jpg" alt="">
+ 	</div>
+ 	<div class="text1">
+ 	<h4 id="txtovf2">DUNKIN X KAKAO</h4>
+ 	<h5>2021-07-12 ~ 2021-07-18</h5>
+ 	<img src="icons/icon_store.gif" alt=""></div>
+ 	<div class="text2"><p>던킨 카카오 선물하기</p></div></li>
+ 	</ul>
+ </div>
+
+ <ul id="new_list_bt">
+	<li></li>
+	<li></li>
+	<li></li>
+	<li></li>
+ </ul>
+
+ <div id="bg1"><img src="images/scroll_txt_1 (1).png" alt="" id="bg1_img1"><img src="images/scroll_txt_2 (1).png" alt="" id="bg1_img2"></div>
+
+ <div id="menu_list">
+ 	<img src="images/tit_dunkin_menu (1).png" alt="" id="menu_list_title_img">
+ 	<h4>던킨도너츠의 다양한 음료와 도넛들</h4>
+ 	<p>Happiness, Fun, Refreshment, Energy and Break... If need be, just enjoy them! In busy daily lives,<br>
+Dunkin' will be a sweet friend to you.</p>
+ 	<ul>
+ 		<li>
+ 			<img src="images/img_product_1 (1).png" alt="">
+ 			<h5>donuts</h5>
+ 			<button>도넛 메뉴 보기</button>
+ 		</li>
+ 		<li>
+ 			<img src="images/img_product_2 (1).png" alt="">
+ 			<h5>coffe</h5>
+ 			<button>커피 메뉴 보기</button>
+ 		</li>
+ 		<li>
+ 			<img src="images/img_product_3 (1).png" alt="">
+ 			<h5>hot sandwiches</h5>
+ 			<button>샌드위치 메뉴 보기</button>
+ 		</li>
+ 		<li>
+ 			<img src="images/img_product_4 (1).png" alt="">
+ 			<h5>beverage</h5>
+ 			<button>음료 메뉴 보기</button>
+ 		</li>
+ 		<li>
+ 			<img src="images/img_product_5 (1).png" alt="">
+ 			<h5>others</h5>
+ 			<button>기타 메뉴 보기</button>
+ 		</li>
+ 	</ul>
+ </div>
+ 
+ <div id="bg2">
+ 	<div id="bg2_leftbox">
+ 		<h4>매장찾기</h4>
+ 		<p>달콤한 휴식을 즐길 수 있는 <br> <span>던킨도너츠 매장</span>을 찾아보세요</p>
+ 	</div>
+ 	<div id="bg2_rightbox">
+ 		<h4>단체주문 & 케이터링 서비스</h4>
+ 		<p>특별한 날, 던킨과 함께 <br>즐거움을 나누세요.</p>
+ 	</div>
+ </div>
+
+ <div id="sns">
+ 	<div id="sns_box">
+ 		<img src="images/tit_dunkin_sns (1).png" alt="" id="sns_list_title_img">
+ 		<h4>던킨도너츠와 함께하는 SNS</h4>
+ 	</div>
+ 	<div id="sns_box2">
+ 		<ul id="sns_icon">
+ 			<li><img src="icons/sns1.png" alt=""></li>
+ 			<li><img src="icons/sns2.png" alt=""></li>
+ 			<li><img src="icons/sns3.png" alt=""></li>
+ 			<li><img src="icons/sns4.png" alt=""></li>
+ 			<li><img src="icons/sns5.png" alt=""></li>
+ 		</ul>
+		</div>
+		<div id="sns_img_slidebox">
+			<ul id="sns_img">
+				<li><img src="images/img1.jpg" alt=""></li>
+				<li><img src="images/img2.png" alt=""></li>
+				<li><img src="images/img3.png" alt=""></li>
+				<li><img src="images/img4.png" alt=""></li>
+				<li><img src="images/img5.png" alt=""></li>
+				<li><img src="images/img6.png" alt=""></li>
+				<li><img src="images/img7.png" alt=""></li>
+				<li><img src="images/img8.png" alt=""></li>
+				<li><img src="images/img9.png" alt=""></li>
+				<li><img src="images/img10.jpg" alt=""></li>
+				<li><img src="images/img11.png" alt=""></li>
+				<li><img src="images/img12.png" alt=""></li>
+				<li><img src="images/img13.png" alt=""></li>
+				<li><img src="images/img14.png" alt=""></li>
+				<li><img src="images/img15.png" alt=""></li>
+			</ul>
+		</div>
+ 		</div>
+ </div>
+ <footer>
+	<div id="footer_leftbox">
+		<img src="icons/footer_logo.png" alt="" id="footer_logo1">
+		<ul id="footer_text">
+			<li>서울특별시 서초구 남부순환로 2620(양재동 11-149번지)</li>
+			<li>사업자 등록번호 : 303-81-09535</li>
+			<li>비알코리아(주) 대표이사 김창대</li>
+			<li>TEL : 080-555-3131</li>
+			<li>개인정보관리책임자 : 김경우</li>
+			<li>COPYRIGHT Ⓒ 2016 BRKOREA COMPANY. ALL RIGHTS RESERVED.</li>
+		</ul>
+		<img src="icons/footer_img_btn1.png" alt="" id="footer_logo2">
+		<img src="icons/footer_img_btn2.png" alt="" id="footer_logo3">
+		<img src="icons/footer_img_btn3.png" alt="" id="footer_logo4">
+		<br>
+		<select name="" id="family">
+		    
+            <option value="">FAMILY SITE</option>
+			<option value="">SPC그룹</option>
+			<option value="">비알코리아</option>
+			<option value="">배스킨라빈스</option>
+			<option value="">파리바게트</option>
+			<option value="">샤니</option>
+			<option value="">파스쿠찌</option>
+			<option value="">해피포인트카드</option>
+			<option value="">던킨 온라인 스쿨</option>
+			<option value="">던킨 아르바이트</option>
+			
+		</select>
+	</div>
+	<div id="footer_rightbox">
+	<div id="footer_rightbox1">
+	<div id="footer_rightbox_left">
+	<ul id="footer_rightbox_left_box1">
+		<li>MENU</li>
+		<li>EVENT</li>
+		<li>STORE</li>
+		<li>BRAND</li>
+	</ul>
+	<ul class="footer_rightbox_left_box">
+		<li>DOUNT</li>
+		<li>MEAL</li>
+		<li>COFFEE</li>
+		<li>OTHERS</li>
+		<li>BEVERAGE</li>
+	</ul>
+	<ul class="footer_rightbox_left_box">
+		<li>매장 프로모션</li>
+		<li>온라인 이벤트</li>
+		<li>당첨자 발표</li>
+		
+	</ul>
+	<ul class="footer_rightbox_left_box">
+		<li>오프라인STORE</li>
+		<li>온라인 STORE</li>
+		<li>가맹점 개설안내</li>
+		
+	</ul>
+	<ul class="footer_rightbox_left_box">
+		<li>브랜드 소개</li>
+		<li>뉴스 & 공지</li>
+		<li>CF</li>
+		
+	</ul>
+	</div>
+	<div id="footer_rightbox_right"><ul id="fr_box1">
+		<li>로그인</li>
+		<li>회원가입</li>
+		<li>고객센터</li>
+		<li>가맹점 개설 안내</li>
+		<li>영양정보</li>
+	</ul></div>	
+	<div id="footer_icons"><ul>
+		<li><img src="icons/sns1.png" alt=""></li>
+		<li><img src="icons/sns2.png" alt=""></li>
+		<li><img src="icons/sns3.png" alt=""></li>
+		<li><img src="icons/sns4.png" alt=""></li>
+		<li><img src="icons/sns5.png" alt=""></li>
+	</ul></div>
+	<div id="footer_rightbox2"><ul id="fr_box2">
+		<li>윤리신고센터</li>
+		<li>이용약관</li>
+		<li>개인정보처리방침</li>
+		<li>영상정보처리기기운영관리방침</li>
+		<li>이메일무단수집거부</li>
+		<li>거래희망회사 사전등록</li>
+		<li>채용안내</li>
+	</ul></div>
+	</div>
+
+ </footer>
+ <div id="popup2">
+ 	<img src="images/popup_210318_pc.jpg" alt="" id="popup2_img">
+ 	<input type="checkbox">
+ 	<h6></h6>
+ 	</div>
+<!--  -->
+ <div id="popup_banner">
+ 
+ 	<div id="popup_banner_box1"><img src="images/1686054278(1).png" alt=""></div>
+ 	<div id="popup_banner_box2">
+		<button id ="popup_banner_bt">
+		<img src="icons/bu_dom.png" alt="">
+		<p>MONTHLY DUNKIN</p></button>
+	</div>
+ </div>
+ </body>
+</html>
